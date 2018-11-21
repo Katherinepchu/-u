@@ -45,11 +45,26 @@
 <!--IMAGENES DE PELICULAS-->
 <ion-col col-6 *ngFor="let usuario of usuarios">
         
-        <h1>Ṕrobando si me salio mi ejemplo KATY CHECALO SI SALIO ABAJO</h1>
+<h1>Ṕrobando si me salio mi ejemplo KATY CHECALO SI SALIO ABAJO</h1>
 <h1>{{usuario.video_id}}</h1>
 <h1>{{usuario.title}}</h1>
          
       </ion-col>
+
+
+  <ion-card *ngIf="movie"> <!--EL FILTRO DE IMAGENES -->
+
+    <!--img [src]="movie.poster_path" /--> <!--LA IMAGEN Q TE BA MOSTRAR-->
+     <img style="width: 150px; height: 200px" src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}">
+         
+    <ion-card-header>
+      <h2>dESCEIPCION
+        <!-- <ion-badge color="primary">{{movie.vote_average}}</ion-badge> -->
+      </h2>
+    </ion-card-header>
+    <ion-card-content>{{movie.title}}</ion-card-content><!--LA DESCRIPCION-->
+  </ion-card>
+
 
 <!--IMAGENES DE PELICULAS-->
 
