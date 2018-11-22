@@ -5,7 +5,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { LoggedinPage } from "../loggedin/loggedin";
 
 import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
-import { MovieApiProvider } from "../../providers/movie-api/movie-api";
 
 import { IMovie } from "../../interface/IMovie";
 @Component({
@@ -17,18 +16,23 @@ export class ListPage {
   movies = new Array<IMovie>();
 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
-    private movieApiProvider: MovieApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider) {
     
   }
 
- ionViewDidLoad() {
-    this.movieApiProvider.getMovies().subscribe(data => {
+ionViewDidLoad(){
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'];
+         console.log('Tigrezhito-traeDatos',data)
 
-      this.movies = data;
-    });
-  }
+         },
+         (error)=> {console.log(error);}
 
+         )
+
+    
+     }
 
 
    goToDetail(movie: IMovie) {
