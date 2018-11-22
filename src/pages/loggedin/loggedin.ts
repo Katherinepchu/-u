@@ -18,6 +18,7 @@ import { IMovie } from "../../interface/IMovie";
 export class LoggedinPage {
   movie: IMovie;
   nombre=''
+  usuarios=''
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -25,7 +26,7 @@ export class LoggedinPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoggedinPage');
     this.movie = this.navParams.data;
-    this.movie = this.navParams.get('usuarios')
+    this.usuarios = this.navParams.get('usuarios')
     
   }
 
