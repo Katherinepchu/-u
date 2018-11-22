@@ -20,19 +20,9 @@ export class ListPage {
     
   }
 
-ionViewDidLoad(){
-       this.proveedor.obtenerDatos()
-       .subscribe(
-         (data)=> {this.usuarios = data['records'];
-         console.log('Tigrezhito-traeDatos',data)
-
-         },
-         (error)=> {console.log(error);}
-
-         )    
-     }
  ionViewDidLoad() {
     this.movieApiProvider.getMovies().subscribe(data => {
+
       this.movies = data;
     });
   }
