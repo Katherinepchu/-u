@@ -26,7 +26,7 @@ export class LoggedinPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoggedinPage');
     this.movie = this.navParams.data;
-    this.usuarios = this.navParams.get('usuarios')
+    
     
   }
 

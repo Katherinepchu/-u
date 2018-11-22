@@ -40,10 +40,6 @@ ionViewDidLoad(){
     this.navCtrl.push(LoggedinPage, movie);
   }
 
-  gologgedin():void{
-    this.navCtrl.push(LoggedinPage, {usuarios:this.usuarios});
-  }
-
 
     
 }
