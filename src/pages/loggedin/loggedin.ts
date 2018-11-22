@@ -25,7 +25,7 @@ export class LoggedinPage {
 
   ionViewDidLoad() {
     console.log('Probando que me traes',this.navParams);
-    //this.movie = this.navParams.data;
+    this.movie = this.navParams.data;
     
     
   }
