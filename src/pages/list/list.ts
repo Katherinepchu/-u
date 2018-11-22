@@ -31,10 +31,6 @@ ionViewDidLoad(){
          (error)=> {console.log(error);}
 
          )
-
-      this.movieApiProvider.getMovies().subscribe(data => {
-      this.movies = data;
-    });
      }
 
 
