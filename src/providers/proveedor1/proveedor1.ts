@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { Observable } from "rxjs/Rx";
 
 /*
   Generated class for the Proveedor1Provider provider.
@@ -20,6 +20,10 @@ export class Proveedor1Provider {
   obtenerDatos(){
   	/*return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq');*/
   	return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq').map(res => res );
+  }
+
+  getMovies(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
   }
 
 }
