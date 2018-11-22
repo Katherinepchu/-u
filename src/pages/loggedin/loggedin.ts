@@ -17,7 +17,7 @@ import { IMovie } from "../../interface/IMovie";
 })
 export class LoggedinPage {
   movie: IMovie;
- 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
