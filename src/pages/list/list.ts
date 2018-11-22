@@ -12,8 +12,9 @@ import { IMovie } from "../../interface/IMovie";
   templateUrl: 'list.html'
 })
 export class ListPage {
-  usuarios = new Array<IMovie>();
+  usuarios
   movies = new Array<IMovie>();
+  nombre=""
 
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider) {
@@ -32,14 +33,16 @@ ionViewDidLoad(){
          )
 
     
-     }
+     }  
 
 
    goToDetail(movie: IMovie) {
     this.navCtrl.push(LoggedinPage, movie);
   }
 
-  
+  gologgedin():void{
+    this.navCtrl.push(LoggedinPage, {usuarios:this.usuarios});
+  }
 
 
     
