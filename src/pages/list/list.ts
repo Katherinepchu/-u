@@ -29,10 +29,14 @@ ionViewDidLoad(){
          },
          (error)=> {console.log(error);}
 
-         )
-
-    
+         )    
      }
+ ionViewDidLoad() {
+    this.movieApiProvider.getMovies().subscribe(data => {
+      this.movies = data;
+    });
+  }
+
 
 
    goToDetail(movie: IMovie) {
