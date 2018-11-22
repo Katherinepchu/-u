@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FavoriteMovieProvider } from "../../providers/favorite-movie/favorite-movie";
+
 import { IMovie } from "../../interface/IMovie";
 
 /**
@@ -17,17 +17,14 @@ import { IMovie } from "../../interface/IMovie";
 })
 export class LoggedinPage {
   movie: IMovie;
-  isFavorite: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-  	private favoriteMovieProvider: FavoriteMovieProvider) {
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoggedinPage');
     this.movie = this.navParams.data;
-    this.favoriteMovieProvider
-      .isFavortieMovie(this.movie)
-      .then(value => (this.isFavorite = value));
+    
   }
 
   
