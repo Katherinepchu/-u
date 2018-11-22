@@ -80,6 +80,24 @@
     <ion-card-content>{{usuario.title}}</ion-card-content><!--LA DESCRIPCION-->
   </ion-card>
 
+
+
+ <ion-card *ng-model="usuario"> <!--EL FILTRO DE IMAGENES -->
+
+
+
+  <tr ng-repeat="usuario in usuarios">
+    <td>{{usuario.title}}</td>
+    
+  </tr>
+
+    <!--img [src]="movie.poster_path" /--> <!--LA IMAGEN Q TE BA MOSTRAR-->
+  
+  </ion-card>
+
+
+
+
 <!--IMAGENES DE PELICULAS-->
 
 <!-- 
