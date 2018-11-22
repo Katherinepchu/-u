@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs/Rx";
+import { IMovie } from "../../interface/IMovie";
+
 
 /*
   Generated class for the Proveedor1Provider provider.
@@ -12,7 +14,7 @@ import { Observable } from "rxjs/Rx";
 @Injectable()
 export class Proveedor1Provider {
   private baseUrl: string = "'http://videos.eventoz.tv/api/read.php?username=jrlq";
-
+  movies: IMovie[];
   constructor(public http: HttpClient) {
     console.log('Hello Proveedor1Provider Provider');
   }
