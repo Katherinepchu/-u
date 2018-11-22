@@ -33,10 +33,10 @@ ionViewDidLoad(){
 
          )
 
+       
        this.movieApiProvider.getMovies().subscribe(data => {
       this.movies = data;
-    
-     }
+    });
   }
 
 
