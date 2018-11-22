@@ -11,6 +11,7 @@ import { Observable } from "rxjs/Rx";
 */
 @Injectable()
 export class Proveedor1Provider {
+  private baseUrl: string = "'http://videos.eventoz.tv/api/read.php?username=jrlq";
 
   constructor(public http: HttpClient) {
     console.log('Hello Proveedor1Provider Provider');
