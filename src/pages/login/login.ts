@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,7 +20,8 @@ import { LoggedinPage } from '../loggedin/loggedin';
 export class LoginPage {
   @ViewChild('username') user;
   @ViewChild('password') password;
-  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams)
+  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
+    private storage: Storage)
   
   {
   }
@@ -50,6 +52,8 @@ export class LoginPage {
     })
   	console.log('Would sign in with ', this.user.value, this.password.value);
   }
+
+  
 
 
 

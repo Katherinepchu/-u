@@ -15,6 +15,7 @@ import { IMovie } from "../../interface/IMovie";
 export class Proveedor1Provider {
   private baseUrl: string = "'http://videos.eventoz.tv/api/read.php?username=jrlq";
   movies: IMovie[];
+  user
   constructor(public http: HttpClient) {
     console.log('Hello Proveedor1Provider Provider');
   }
@@ -22,7 +23,7 @@ export class Proveedor1Provider {
 
   obtenerDatos(){
   	/*return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq');*/
-  	return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq').map(res => res );
+  	return this.http.get('http://videos.eventoz.tv/api/read.php?username='+this.user).map(res => res );
   }
 
   // getMovies(): Observable<any> {

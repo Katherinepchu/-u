@@ -18,7 +18,7 @@ import { SalirPage } from '../pages/salir/salir';
 
 import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
 import { HttpClientModule } from '@angular/common/http';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -58,7 +58,7 @@ const firebaseAuth = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
-    
+    IonicStorageModule.forRoot()
     
   ],
   bootstrap: [IonicApp],
