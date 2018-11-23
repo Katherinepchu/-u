@@ -14,8 +14,12 @@
 
 
 <ion-content padding>
-<ion-list>
 
+<ion-item text-center>
+        <ion-img width="192" height="192" src="assets/logo192.png" ></ion-img>
+      </ion-item>
+<ion-list>
+  
   <ion-item>
     <ion-label floating>Username</ion-label>
     <ion-input type="text" #username></ion-input>
@@ -29,7 +33,36 @@
 </ion-list>
 
 <div padding>
-  <button block ion-button (click)="signInUser()" item-left>Sign In</button>
+  <button block ion-button item-left>Sign In</button>
 </div>
+
+<!--  <form>
+    <ion-list>
+      <ion-item text-center>
+        <ion-img width="192" height="192" src="assets/logo192.png" ></ion-img>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" item-left></ion-icon>
+        <ion-label stacked>Password:</ion-label>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button>Ingresar</button>
+    </div>
+  </form>
+  <div text-center>
+    <a ion-button block clear (click)="goToSignup()">
+      Nueva cuenta
+    </a>
+    <a ion-button block clear (click)="goToResetPassword()">
+      Olvide password
+    </a>
+  </div> -->
 
 </ion-content>

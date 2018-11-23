@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { Observable } from "rxjs/Rx";
+// import { Observable } from "rxjs/Rx";
 import { IMovie } from "../../interface/IMovie";
 
 
@@ -25,8 +25,8 @@ export class Proveedor1Provider {
   	return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq').map(res => res );
   }
 
-  getMovies(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
+  // getMovies(): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}`);
+  // }
 
 }
