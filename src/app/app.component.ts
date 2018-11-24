@@ -36,10 +36,10 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HelloIonicPage },
       { title: 'Videos', component: ListPage },
-      { title: 'Sitio Estandar', component: StandarPage },
-
-      { title: 'Series', component: List1Page },
-      { title: 'Katherine', component: KatyPage },
+      // { title: 'Sitio Estandar', component: StandarPage },
+      // { title: 'Katherine', component: KatyPage },
+      // { title: 'Series', component: List1Page },
+      
       { title: 'Salir', component: HelloIonicPage },
      
 
