@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
-
+import { Storage } from '@ionic/storage';
+import { ListPage } from '../list/list';
 /**
  * Generated class for the LoginPage page.
  *
@@ -17,11 +18,16 @@ import { LoggedinPage } from '../loggedin/loggedin';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  inputtext:string;
+  key:string='username';
+
   @ViewChild('username') user;
   @ViewChild('password') password;
-  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams)
+  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
+    private storage: Storage)
   
   {
+
   }
 
   ionViewDidLoad() {
@@ -50,6 +56,18 @@ export class LoginPage {
     })
   	console.log('Would sign in with ', this.user.value, this.password.value);
   }
+  
+
+
+saveData(){
+this.storage.set(this.key, this.inputtext);
+this.storage.get(this.key).then((val) => {
+    console.log('Trae los usuarios', val);
+this.alert('Success! You\'re logged in');
+this.navCtrl.setRoot( ListPage );
+  });
+
+}
 
 
 

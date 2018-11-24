@@ -11,16 +11,15 @@
      <br><!--2) AGREGUE ESPACIO BR-->
      <br>
       </ion-navbar>
-      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-<ion-list>
+      
+<!-- <ion-list>
   <ion-item *ngFor="let item of items">
     {{ item }}
   </ion-item>
-</ion-list>
+</ion-list> -->
 </ion-header>
 
 <ion-content padding class="bg">
-
 
 <!--barra de busqueda-->
 <!-- <ion-searchbar  (ionInput)="getItems($event)"></ion-searchbar>
@@ -44,9 +43,12 @@
            
 <!--AQUITERMINAR-->
 
+
 <ion-grid *ngIf="usuarios">
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-row>
       <ion-col col-6 *ngFor="let usuario of usuarios">
+        <h1>{{usuario.title}}</h1>
         <img style="width: 150px; height: 200px" src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}" (click)="goToDetail(usuario)">
          
       </ion-col>

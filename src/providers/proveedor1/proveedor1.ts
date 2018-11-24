@@ -15,6 +15,7 @@ import { IMovie } from "../../interface/IMovie";
 export class Proveedor1Provider {
   private baseUrl: string = "'http://videos.eventoz.tv/api/read.php?username=jrlq";
   movies: IMovie[];
+  usuario
   constructor(public http: HttpClient) {
     console.log('Hello Proveedor1Provider Provider');
   }

@@ -8,21 +8,15 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
-import { List1Page } from '../pages/list1/list1';
-import { StandarPage } from '../pages/standar/standar';
-import { KatyPage } from '../pages/katy/katy';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
 import { SalirPage } from '../pages/salir/salir';
-
 import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -43,9 +37,6 @@ const firebaseAuth = {
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    List1Page,
-    StandarPage,
-    KatyPage,
     RegisterPage,
     LoginPage,
     LoggedinPage,
@@ -58,6 +49,7 @@ const firebaseAuth = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
+    IonicStorageModule.forRoot()
     
     
   ],
@@ -67,9 +59,7 @@ const firebaseAuth = {
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    List1Page,
-    StandarPage,
-    KatyPage,
+    
     RegisterPage,
     LoginPage,
     LoggedinPage,
