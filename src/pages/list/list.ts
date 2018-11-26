@@ -23,6 +23,7 @@ export class ListPage {
   searchQuery: string = '';
   items
 
+
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider) {
   this.initializeItems();
@@ -33,7 +34,8 @@ export class ListPage {
 ionViewDidLoad(){
        this.proveedor.obtenerDatos()
        .subscribe(
-         (data)=> {this.usuarios = data['records'];
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==1)
          console.log('Tigrezhito-traeDatos',data)
 
          },
@@ -42,7 +44,9 @@ ionViewDidLoad(){
          )
 
     
-     }  
+     }
+
+
 
   
 
