@@ -37,6 +37,7 @@ ionViewDidLoad(){
          (data)=> {this.usuarios = data['records'] ;
          this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==1)
          console.log('Tigrezhito-traeDatos',data)
+         console.log('VIDEO_FILTRADOS_POR_CATEGORIA_ID',data)
 
          },
          (error)=> {console.log(error);}
