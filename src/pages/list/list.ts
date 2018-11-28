@@ -8,6 +8,7 @@ import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
 import { HttpClient } from '@angular/common/http';
 import { IMovie } from "../../interface/IMovie";
 import { HttpClientModule } from '@angular/common/http';
+import { Platform, ActionSheetController } from 'ionic-angular';
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
@@ -25,7 +26,9 @@ export class ListPage {
 
 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
+    public platform: Platform,
+    public actionsheetCtrl: ActionSheetController) {
   this.initializeItems();
 
     
@@ -35,7 +38,7 @@ ionViewDidLoad(){
        this.proveedor.obtenerDatos()
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
-         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==1)
+         
          console.log('Tigrezhito-traeDatos',data)
          console.log('VIDEO_FILTRADOS_POR_CATEGORIA_ID',data)
 
@@ -83,6 +86,257 @@ ionViewDidLoad(){
         /*return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;*/
       })
     }
+  }
+
+
+   openMenu() {
+    let actionSheet = this.actionsheetCtrl.create({
+      title: 'Categorias',
+      cssClass: 'action-sheets-basic-page',
+      buttons: [
+        // {
+        //   text: 'Delete',
+        //   role: 'destructive',
+        //   icon: !this.platform.is('ios') ? 'trash' : null,
+        //   handler: () => {
+        //     console.log('Delete clicked');
+        //   }
+        // },
+        // {
+        //   text: 'Share',
+        //   icon: !this.platform.is('ios') ? 'share' : null,
+        //   handler: () => {
+        //     console.log('Share clicked');
+        //   }
+        // },
+        // {
+        //   text: 'Play',
+        //   icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
+        //   handler: () => {
+        //     console.log('Play clicked');
+        //   }
+        // },
+        // {
+        //   text: 'Favorite',
+        //   icon: !this.platform.is('ios') ? 'heart-outline' : null,
+        //   handler: () => {
+        //     console.log('Favorite clicked');
+        //   }
+        // },
+        {
+          text: 'Cancel',
+          role: 'cancel', // will always sort to be on the bottom
+          icon: !this.platform.is('ios') ? 'close' : null,
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Ciencias Ficcion',
+        
+         handler: () => {
+           
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==2)
+         console.log('Tigrezhito-traeDatos',data)
+         console.log('CIENCIAS FICCION',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+ 
+            console.log('Cancel clicked');
+          }
+        },
+
+
+        {
+          text: 'Comedia',
+        
+          handler: () => {
+
+    
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==4)
+       
+         console.log('Comediass',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+    
+   
+            console.log('COMEDIA');
+          }
+        },
+        {
+          text: 'Drama',
+        
+          handler: () => {
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==5)
+      
+         console.log('DRAMA',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+    
+              console.log('DRAMA');
+          }
+        },
+        {
+          text: 'Suspenso',
+        
+        handler: () => {
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==6)
+        
+         console.log('Suspenso',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+            console.log('Suspenso');
+          }
+        },
+        {
+          text: 'Accion',
+        
+          handler: () => {
+
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==7)
+         
+         console.log('Accion',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+    
+ 
+            console.log('ACCION');
+          }
+        },
+        {
+          text: 'Aventura',
+        
+          handler: () => {
+
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==8)
+         console.log('Tigrezhito-traeDatos',data)
+         console.log('VIDEO_FILTRADOS_POR_CATEGORIA_ID',data)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+    
+
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Romance',
+        
+          handler: () => {
+
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==9)
+         
+         console.log('ROMANCE',this.usuarios)
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+ 
+            console.log('ROMACE');
+          }
+        },
+        {
+          text: 'Infantil',
+        
+          handler: () => {
+
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==11)
+        
+         console.log('ROMANCE',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+ 
+            console.log('INFANTIL');
+          }
+
+        },
+
+        {
+          text: 'Terror',
+        
+          handler: () => {
+
+
+       this.proveedor.obtenerDatos()
+       .subscribe(
+         (data)=> {this.usuarios = data['records'] ;
+         this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==12)
+        
+         console.log('TERROR',this.usuarios)
+
+         },
+         (error)=> {console.log(error);}
+
+         )
+
+    
+     
+            console.log('TERROR');
+          }
+
+        }
+
+
+      ]
+    });
+    actionSheet.present();
   } 
 
 }
