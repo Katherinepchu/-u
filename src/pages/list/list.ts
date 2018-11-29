@@ -11,18 +11,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { Platform, ActionSheetController } from 'ionic-angular';
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'list.html',
 })
 
 export class ListPage {
 
-  usuarios
+  usuarios;
   movies = new Array<IMovie>();
-  onViewDidLoad
-  nombre=""
+  onViewDidLoad;
+  nombre="";
 
   searchQuery: string = '';
-  items
+  items;
 
 
   
@@ -82,7 +82,7 @@ ionViewDidLoad(){
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.usuarios = this.usuarios.filter((usuario) => {
-        return usuario.title.toLowerCase().indexOf(val.toLowerCase()) >-1;
+        return (usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
         /*return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;*/
       })
     }
@@ -94,35 +94,7 @@ ionViewDidLoad(){
       title: 'Categorias',
       cssClass: 'action-sheets-basic-page',
       buttons: [
-        // {
-        //   text: 'Delete',
-        //   role: 'destructive',
-        //   icon: !this.platform.is('ios') ? 'trash' : null,
-        //   handler: () => {
-        //     console.log('Delete clicked');
-        //   }
-        // },
-        // {
-        //   text: 'Share',
-        //   icon: !this.platform.is('ios') ? 'share' : null,
-        //   handler: () => {
-        //     console.log('Share clicked');
-        //   }
-        // },
-        // {
-        //   text: 'Play',
-        //   icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
-        //   handler: () => {
-        //     console.log('Play clicked');
-        //   }
-        // },
-        // {
-        //   text: 'Favorite',
-        //   icon: !this.platform.is('ios') ? 'heart-outline' : null,
-        //   handler: () => {
-        //     console.log('Favorite clicked');
-        //   }
-        // },
+        
         {
           text: 'Cancel',
           role: 'cancel', // will always sort to be on the bottom
@@ -131,6 +103,7 @@ ionViewDidLoad(){
             console.log('Cancel clicked');
           }
         },
+
         {
           text: 'Ciencias Ficcion',
         
@@ -140,15 +113,11 @@ ionViewDidLoad(){
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
          this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==2)
-         console.log('Tigrezhito-traeDatos',data)
-         console.log('CIENCIAS FICCION',this.usuarios)
+       
 
          },
-         (error)=> {console.log(error);}
 
          )
- 
-            console.log('Cancel clicked');
           }
         },
 
@@ -158,24 +127,18 @@ ionViewDidLoad(){
         
           handler: () => {
 
-    
-       this.proveedor.obtenerDatos()
+        this.proveedor.obtenerDatos()
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
          this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==4)
-       
-         console.log('Comediass',this.usuarios)
 
          },
-         (error)=> {console.log(error);}
 
          )
-
-    
-   
-            console.log('COMEDIA');
           }
         },
+
+
         {
           text: 'Drama',
         
@@ -185,18 +148,15 @@ ionViewDidLoad(){
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
          this.usuarios = this.usuarios.filter(usuario=> usuario.category_id==5)
-      
-         console.log('DRAMA',this.usuarios)
+
 
          },
-         (error)=> {console.log(error);}
 
          )
-
-    
-              console.log('DRAMA');
           }
+
         },
+
         {
           text: 'Suspenso',
         
@@ -210,13 +170,13 @@ ionViewDidLoad(){
          console.log('Suspenso',this.usuarios)
 
          },
-         (error)=> {console.log(error);}
 
          )
 
-            console.log('Suspenso');
           }
         },
+
+
         {
           text: 'Accion',
         
@@ -231,15 +191,13 @@ ionViewDidLoad(){
          console.log('Accion',this.usuarios)
 
          },
-         (error)=> {console.log(error);}
+
 
          )
-
-    
- 
-            console.log('ACCION');
           }
         },
+
+
         {
           text: 'Aventura',
         
@@ -263,6 +221,9 @@ ionViewDidLoad(){
             console.log('Cancel clicked');
           }
         },
+
+
+
         {
           text: 'Romance',
         
@@ -284,6 +245,9 @@ ionViewDidLoad(){
             console.log('ROMACE');
           }
         },
+
+
+
         {
           text: 'Infantil',
         
@@ -311,9 +275,7 @@ ionViewDidLoad(){
         {
           text: 'Terror',
         
-          handler: () => {
-
-
+       handler: () => {
        this.proveedor.obtenerDatos()
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
@@ -322,13 +284,8 @@ ionViewDidLoad(){
          console.log('TERROR',this.usuarios)
 
          },
-         (error)=> {console.log(error);}
 
          )
-
-    
-     
-            console.log('TERROR');
           }
 
         }
