@@ -14,6 +14,7 @@ import { Platform, ActionSheetController } from 'ionic-angular';
   templateUrl: 'list.html',
 })
 
+
 export class ListPage {
 
   usuarios;
@@ -72,7 +73,7 @@ ionViewDidLoad(){
   }
 
 
-     getItems(ev: any) {   
+ getItems(ev: any) {   
     // Reset items back to all of the items
     this.initializeItems();
 

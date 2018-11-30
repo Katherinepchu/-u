@@ -4,13 +4,23 @@
      <!--AQUI SE ENCUENTRA EL el menu-->
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
+        <ion-title >Películas</ion-title>
+
       </button>
-    <button ion-button block (click)="openMenu()">
+   <!--  <button ion-button block (click)="openMenu()">
     Categorias
-  </button>
-      <br>
-      <br>
-      <ion-title >Películas</ion-title>
+  </button> -->
+      
+    <p>
+    <button ion-button color="dark" round icon-start (click)="openMenu()" style="float:right">
+      <ion-icon name='construct' is-active="false" ></ion-icon>
+      Categoria
+    </button>
+   <!--  <button ion-button color="dark" clear icon-only>
+      <ion-icon name='hammer' is-active="false"></ion-icon>
+    </button> -->
+  </p>
+
      <br><!--2) AGREGUE ESPACIO BR-->
      <br>
       </ion-navbar>

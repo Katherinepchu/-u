@@ -13,7 +13,7 @@ import { IMovie } from "../../interface/IMovie";
 */
 @Injectable()
 export class Proveedor1Provider {
-  private baseUrl: string = "'http://videos.eventoz.tv/api/read.php?username=jrlq";
+  private baseUrl: string = "http://videos.eventoz.tv/api/read.php?username=";
   movies: IMovie[];
   usuario
   constructor(public http: HttpClient) {
