@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs/Rx";
 import { IMovie } from "../../interface/IMovie";
+import { Storage } from '@ionic/storage';
 
 
 /*
@@ -16,14 +17,30 @@ export class Proveedor1Provider {
   private baseUrl: string = "http://videos.eventoz.tv/api/read.php?username=";
   movies: IMovie[];
   usuario
-  constructor(public http: HttpClient) {
+  user:any;
+  constructor(public storage:Storage,public http: HttpClient) {
+
+
+
+
+   storage.get('usuario').then((val) => {
+
+   this.user=val
+  
+
+  });
+
     console.log('Hello Proveedor1Provider Provider');
+  
+
+
+
   }
 
 
   obtenerDatos(){
   	/*return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq');*/
-  	return this.http.get('http://videos.eventoz.tv/api/read.php?username=jrlq').map(res => res );
+  	return this.http.get('http://videos.eventoz.tv/api/read.php?username='+this.user).map(res => res );
   }
 
   getMovies(): Observable<any> {

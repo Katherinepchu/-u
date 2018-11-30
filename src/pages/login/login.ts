@@ -20,7 +20,7 @@ import { ListPage } from '../list/list';
 export class LoginPage {
   inputtext:string;
   key:string='username';
-
+ 
   @ViewChild('username') user;
   @ViewChild('password') password;
   constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
@@ -42,30 +42,9 @@ export class LoginPage {
     }).present();
   }
 
-  signInUser() {
-    this.fire.auth.signInWithEmailAndPassword(this.user.value + '@domian.xta', this.password.value)
-    .then( data => {
-      console.log('got some data', this.fire.auth.currentUser);
-      this.alert('Success! You\'re logged in');
-      this.navCtrl.setRoot( LoggedinPage );
-      // user is logged in
-    })
-    .catch( error => {
-      console.log('got an error', error);
-      this.alert(error.message);
-    })
-  	console.log('Would sign in with ', this.user.value, this.password.value);
-  }
-  
-
-
 saveData(){
-this.storage.set(this.key, this.inputtext);
-this.storage.get(this.key).then((val) => {
-    console.log('Trae los usuarios', val);
-this.alert('Success! You\'re logged in');
-this.navCtrl.setRoot( ListPage );
-  });
+this.storage.set('usuario', this.inputtext);
+
 
 }
 
