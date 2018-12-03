@@ -44,6 +44,7 @@ export class LoginPage {
 
 saveData(){  
 this.storage.set('usuario', this.inputtext)
+console.log('probando',this.storage)
 
   }
 

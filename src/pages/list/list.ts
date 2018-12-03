@@ -14,7 +14,6 @@ import { Platform, ActionSheetController } from 'ionic-angular';
   templateUrl: 'list.html',
 })
 
-
 export class ListPage {
 
   usuarios;
@@ -25,8 +24,6 @@ export class ListPage {
   searchQuery: string = '';
   items;
 
-
-  
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
     public platform: Platform,
     public actionsheetCtrl: ActionSheetController) {
@@ -47,18 +44,11 @@ ionViewDidLoad(){
          (error)=> {console.log(error);}
 
          )
-
     
      }
-
-
-
-  
-
    goToDetail(movie: IMovie) {
     this.navCtrl.push(LoggedinPage, movie);
   }
-
 
   initializeItems() {
       this.proveedor.obtenerDatos()
@@ -215,11 +205,8 @@ ionViewDidLoad(){
          },
          (error)=> {console.log(error);}
 
-         )
-
-    
-
-            console.log('Cancel clicked');
+         )         
+         console.log('Cancel clicked');
           }
         },
 
