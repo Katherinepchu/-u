@@ -63,7 +63,7 @@ ionViewDidLoad(){
   }
 
 
- getItems(ev: any) {   
+getItems(ev) {
     // Reset items back to all of the items
     this.initializeItems();
 
@@ -72,12 +72,16 @@ ionViewDidLoad(){
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.usuarios = this.usuarios.filter((usuario) => {
-      return usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1;
-        /*return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;*/
+      this.usuarios = this.items.filter((usuario) => {
+        return (usuario.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
+
+
+
+
+
 
 
    openMenu() {

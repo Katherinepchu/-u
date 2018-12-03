@@ -44,9 +44,20 @@ export class LoginPage {
 
 saveData(){  
 this.storage.set('usuario', this.inputtext)
-console.log('probando',this.storage)
 
+.then( data => {
+      console.log('got some data', this.user);
+      this.alert('Success! You\'re logged in');
+      this.navCtrl.setRoot( ListPage );
+      // user is logged in
+    })
+    .catch( error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    })
+    console.log('Would sign in with ', this.user.value);
   }
+
 
 
 
