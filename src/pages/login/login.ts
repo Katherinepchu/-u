@@ -43,7 +43,14 @@ export class LoginPage {
   }
 
 saveData(){
-this.storage.set('usuario', this.inputtext);
+this.storage.set('usuario', this.inputtext)
+ .then( data => {
+      console.log('got some data', this.storage.set);
+      this.alert('Success! You\'re logged in');
+      this.navCtrl.setRoot( ListPage );
+      // user is logged in
+    })
+
 
 
 }
