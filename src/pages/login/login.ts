@@ -19,6 +19,7 @@ import { ListPage } from '../list/list';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  
   inputtext:string;
   key:string='username';
  
@@ -44,16 +45,18 @@ export class LoginPage {
     }).present();
   }
 
-saveData(){
+// <<<<<<< HEAD
+// saveData(){
  
+// this.storage.set('usuario', this.inputtext);
+//  this.alert('Success! You\'re logged in');
+//   this.navCtrl.setRoot( ListPage );
+// =======
+saveData(){  
 this.storage.set('usuario', this.inputtext);
- this.alert('Success! You\'re logged in');
-  this.navCtrl.setRoot( ListPage );
+console.log("prueba-1",this.storage.get)
+// >>>>>>> 0fe6e130e70f31ac50022f4c8df0cc2b443c99ab
 
-
-}
-
-
-
+  }
 }
   
