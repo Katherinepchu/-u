@@ -21,8 +21,6 @@ export class Proveedor1Provider {
   constructor(public storage:Storage,public http: HttpClient) {
 
 
-
-
    storage.get('usuario').then((val) => {
 
    this.user=val

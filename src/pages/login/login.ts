@@ -31,7 +31,7 @@ export class LoginPage {
   {
 
   }
-
+// 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
@@ -53,9 +53,14 @@ export class LoginPage {
 //   this.navCtrl.setRoot( ListPage );
 // =======
 saveData(){  
-this.storage.set('usuario', this.inputtext);
-console.log("prueba-1",this.storage.get)
+//<<<<<<< HEAD
+//this.storage.set('usuario', this.inputtext);
+//console.log("prueba-1",this.storage.get)
 // >>>>>>> 0fe6e130e70f31ac50022f4c8df0cc2b443c99ab
+//=======
+this.storage.set('usuario', this.inputtext)
+console.log('probando',this.storage)
+//>>>>>>> db5572b559665c0a52f7a7e6b07ec0904cdb41b7
 
   }
 }
