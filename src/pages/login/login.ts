@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
 import { Storage } from '@ionic/storage';
 import { ListPage } from '../list/list';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -35,6 +36,7 @@ export class LoginPage {
   }
 
   alert(message: string) {
+
     this.alertCtrl.create({
       title: 'Info!',
       subTitle: message,
@@ -43,7 +45,10 @@ export class LoginPage {
   }
 
 saveData(){
+ 
 this.storage.set('usuario', this.inputtext);
+ this.alert('Success! You\'re logged in');
+  this.navCtrl.setRoot( ListPage );
 
 
 }
