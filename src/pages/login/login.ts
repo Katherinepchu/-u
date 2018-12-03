@@ -51,9 +51,12 @@ this.storage.set('usuario', this.inputtext)
       // user is logged in
     })
 
-
-
-}
+ .catch( error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    })
+    console.log('Would sign in with ', this.user.value);
+  }
 
 
 
