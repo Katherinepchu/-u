@@ -39,7 +39,7 @@ export class LoginPage {
   alert(message: string) {
 
     this.alertCtrl.create({
-      title: 'Info!',
+      title: 'Acceso!',
       subTitle: message,
       buttons: ['OK']
     }).present();
@@ -59,9 +59,27 @@ saveData(){
 // >>>>>>> 0fe6e130e70f31ac50022f4c8df0cc2b443c99ab
 //=======
 this.storage.set('usuario', this.inputtext)
-console.log('probando',this.storage)
+
+// console.log('probando',this.storage);
 //>>>>>>> db5572b559665c0a52f7a7e6b07ec0904cdb41b7
 
+.then( data => {
+      console.log('got some data', this.user);
+      this.alert('¡Éxito! Estas conectado');
+      this.navCtrl.setRoot( ListPage );
+      // user is logged in
+    })
+    .catch( error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    })
+    console.log('Would sign in with ', this.user);
   }
+
+
+
+
+
+
 }
   

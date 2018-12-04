@@ -5,36 +5,31 @@
   Ionic pages and navigation.
 
 -->
-<!--animacion-->
 
+<ion-header >
 
-
-
-<!--fin-->
-
-
-
-<ion-header>
-
-  <ion-navbar color="primary">
+  <ion-navbar color="dark">
+    <br>
+    
     <ion-title >IPTV EVO</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding >
-<ion-list>
+<ion-content padding class="fondo" color="dark">
+<ion-list >
 
 <br>
-<br>
-  <ion-item>
 
-    <ion-label center floating>Ingrese su código de usuario</ion-label>
+  <ion-item style="background-color: transparent;">
 
-    <ion-label floating>Username</ion-label>
+    <ion-label class="center" floating style="font-size:20px;
+  font-weight: bold; color:white">Ingrese su código de usuario</ion-label>
 
-    <ion-input type="text"  [(ngModel)]='inputtext' #usuario></ion-input>
+   
+    <ion-input  class="center" type="text" [(ngModel)]='inputtext' #usuario></ion-input>
   </ion-item>
  
   <!-- <ion-item>
@@ -42,10 +37,14 @@
     <ion-input type="password" #password></ion-input>
   </ion-item> -->
   
-</ion-list>
+</ion-list >
 
-<div padding>
-  <button  ion-button (click)="saveData()" item-left>Registrar</button>
+<div padding class="center" color="dark" >
+  
+  
+
+  <button  style="width: 200px"ion-button (click)="saveData()" item-left color="primary"round>Ingresar</button>
 </div>
+
 
 </ion-content>

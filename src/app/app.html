@@ -2,17 +2,27 @@
 <br>
 
   <ion-header >
-    <ion-toolbar color="primary">
-
-      <ion-title >GISS MOBILE</ion-title>
+    <ion-toolbar color="dark" class="center">
+      <br>
+      <img  width="100px" height="70px"src="../assets/IPTV.png">
+      <br>
+      <br>
+      <ion-title >IPTV EVO</ion-title>
+      <br>
+      <br>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content >
-    <ion-list >
-      <button  ion-item *ngFor="let p of pages" (click)="openPage(p)" color="primary">
+  <ion-content class="indice" >
+    <ion-list  >
+      <button style="background-color: transparent;" ion-item *ngFor="let p of pages" (click)="openPage(p)" color="primary">
+
+        
+        <ion-icon name="videocam"></ion-icon>
         {{p.title}}
+        
       </button>
+
     </ion-list>
   </ion-content>
 
@@ -21,3 +31,4 @@
 </ion-menu >
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

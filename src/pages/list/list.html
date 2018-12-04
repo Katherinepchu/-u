@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-navbar color="primary"><!--1) agregamos el color -->
+  <ion-navbar color="primary" ><!--1) agregamos el color -->
    
      <!--AQUI SE ENCUENTRA EL el menu-->
       <button ion-button menuToggle>
@@ -13,7 +13,7 @@
       
     <p>
     <button ion-button color="dark" round icon-start (click)="openMenu()" style="float:right">
-      <ion-icon name='construct' is-active="false" ></ion-icon>
+      <ion-icon name='start' is-active="false" ></ion-icon>
       Categoria
     </button>
    <!--  <button ion-button color="dark" clear icon-only>
@@ -21,9 +21,15 @@
     </button> -->
   </p>
 
+
+
+
+
+
      <br><!--2) AGREGUE ESPACIO BR-->
 
       </ion-navbar>
+      <ion-searchbar (ionInput)="getItems($event)" #usuario></ion-searchbar>
       
 <!-- <ion-list>
   <ion-item *ngFor="let item of items">
@@ -60,17 +66,17 @@
 <!-- <ion-grid *ngIf="usuarios"> -->
 
     <ion-row>
-      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      
       <!-- |filter:usuario.category_id=1
       | filter:{ usuario.category_id:'1'}'
        -->
       
       <ion-col col-6 *ngFor="let usuario of usuarios ">
       
-        
-        {{usuario.title}}
+        <!-- 
+        {{usuario.title}} -->
         <img style="width: 150px; height: 200px" src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}" (click)="goToDetail(usuario)">
-        {{usuario.category_id}}
+        <!-- {{usuario.category_id}} -->
       </ion-col>
        
     </ion-row>

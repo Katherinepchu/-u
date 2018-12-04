@@ -63,7 +63,7 @@ ionViewDidLoad(){
   }
 
 
- getItems(ev: any) {   
+getItems(ev) {
     // Reset items back to all of the items
     this.initializeItems();
 
@@ -73,16 +73,20 @@ ionViewDidLoad(){
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.usuarios = this.usuarios.filter((usuario) => {
-      return usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1;
-        /*return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;*/
+        return (usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
 
 
+
+
+
+
+
    openMenu() {
     let actionSheet = this.actionsheetCtrl.create({
-      title: 'Categorias',
+      title: 'Categoría',
       cssClass: 'action-sheets-basic-page',
       buttons: [
         
@@ -96,7 +100,7 @@ ionViewDidLoad(){
         },
 
         {
-          text: 'Ciencias Ficcion',
+          text: 'Ciencia Ficción',
         
          handler: () => {
            
@@ -169,7 +173,7 @@ ionViewDidLoad(){
 
 
         {
-          text: 'Accion',
+          text: 'Acción',
         
           handler: () => {
 
