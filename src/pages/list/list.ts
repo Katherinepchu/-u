@@ -86,7 +86,7 @@ getItems(ev) {
 
    openMenu() {
     let actionSheet = this.actionsheetCtrl.create({
-      title: 'Categorias',
+      title: 'Categoría',
       cssClass: 'action-sheets-basic-page',
       buttons: [
         
@@ -100,7 +100,7 @@ getItems(ev) {
         },
 
         {
-          text: 'Ciencias Ficcion',
+          text: 'Ciencia Ficción',
         
          handler: () => {
            
@@ -173,7 +173,7 @@ getItems(ev) {
 
 
         {
-          text: 'Accion',
+          text: 'Acción',
         
           handler: () => {
 
