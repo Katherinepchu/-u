@@ -55,7 +55,7 @@ this.storage.set('usuario', this.inputtext)
       console.log('got an error', error);
       this.alert(error.message);
     })
-    console.log('Would sign in with ', this.user.value);
+    console.log('Would sign in with ', this.user);
   }
 
 

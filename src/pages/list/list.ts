@@ -72,8 +72,8 @@ getItems(ev) {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.usuarios = this.items.filter((usuario) => {
-        return (usuario.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.usuarios = this.usuarios.filter((usuario) => {
+        return (usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
