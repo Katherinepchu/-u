@@ -5,7 +5,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
 import { Storage } from '@ionic/storage';
 import { ListPage } from '../list/list';
-
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,7 +18,6 @@ import { ListPage } from '../list/list';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  
   inputtext:string;
   key:string='username';
  
@@ -31,55 +29,24 @@ export class LoginPage {
   {
 
   }
-// 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
   alert(message: string) {
-
     this.alertCtrl.create({
-      title: 'Acceso!',
+      title: 'Info!',
       subTitle: message,
       buttons: ['OK']
     }).present();
   }
 
-// <<<<<<< HEAD
-// saveData(){
- 
-// this.storage.set('usuario', this.inputtext);
-//  this.alert('Success! You\'re logged in');
-//   this.navCtrl.setRoot( ListPage );
-// =======
 saveData(){  
-//<<<<<<< HEAD
-//this.storage.set('usuario', this.inputtext);
-//console.log("prueba-1",this.storage.get)
-// >>>>>>> 0fe6e130e70f31ac50022f4c8df0cc2b443c99ab
-//=======
-this.storage.set('usuario', this.inputtext)
-
-// console.log('probando',this.storage);
-//>>>>>>> db5572b559665c0a52f7a7e6b07ec0904cdb41b7
-
-.then( data => {
-      console.log('got some data', this.user);
-      this.alert('¡Éxito! Estas conectado');
-      this.navCtrl.setRoot( ListPage );
-      // user is logged in
-    })
-    .catch( error => {
-      console.log('got an error', error);
-      this.alert(error.message);
-    })
-    console.log('Would sign in with ', this.user);
-  }
+this.storage.set('usuario', this.inputtext);
+this.navCtrl.setRoot( ListPage );
 
 
-
-
-
-
+}
 }
   
