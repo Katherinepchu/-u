@@ -26,8 +26,7 @@ export class ListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController,
-    public Proveedor1Provider:Proveedor1Provider) {
+    public actionsheetCtrl: ActionSheetController) {
   this.initializeItems();
 
     
@@ -35,7 +34,7 @@ export class ListPage {
 
 ionViewDidLoad(){
   this.proveedor.obtenerDatos()
-       //his.Proveedor1Provider.obtenerDatos()
+       
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
          
@@ -53,8 +52,8 @@ ionViewDidLoad(){
   }
 
   initializeItems() {
-      // this.proveedor.obtenerDatos()
-      this.Proveedor1Provider.obtenerDatos()
+       this.proveedor.obtenerDatos()
+      
        .subscribe(
          (data)=> {this.usuarios = data['records'];
          console.log('Tigrezhito-traeDatos',data)
