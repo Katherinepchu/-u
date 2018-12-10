@@ -26,14 +26,16 @@ export class ListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController) {
+    public actionsheetCtrl: ActionSheetController,
+    public Proveedor1Provider:Proveedor1Provider) {
   this.initializeItems();
 
     
   }
 
 ionViewDidLoad(){
-       this.proveedor.obtenerDatos()
+  this.proveedor.obtenerDatos()
+       //his.Proveedor1Provider.obtenerDatos()
        .subscribe(
          (data)=> {this.usuarios = data['records'] ;
          
@@ -51,7 +53,8 @@ ionViewDidLoad(){
   }
 
   initializeItems() {
-      this.proveedor.obtenerDatos()
+      // this.proveedor.obtenerDatos()
+      this.Proveedor1Provider.obtenerDatos()
        .subscribe(
          (data)=> {this.usuarios = data['records'];
          console.log('Tigrezhito-traeDatos',data)
@@ -72,7 +75,7 @@ getItems(ev) {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.usuarios = this.usuarios.title.filter((usuario) => {
+      this.usuarios.title = this.usuarios.filter((usuario) => {
         return (usuario.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
@@ -84,7 +87,7 @@ getItems(ev) {
 
 
 
-   openMenu() {
+ openMenu() {
     let actionSheet = this.actionsheetCtrl.create({
       title: 'Categoría',
       cssClass: 'action-sheets-basic-page',
