@@ -24,12 +24,17 @@ export class ListPage {
   searchQuery: string = '';
   items;
 
+  keyword;
+  //pelicula = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public proveedor:Proveedor1Provider,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController) {
+    public actionsheetCtrl: ActionSheetController
+    ) {
+  this.usuarios = this.lista;
   this.initializeItems();
 
-    
+
   }
 
 ionViewDidLoad(){
@@ -47,7 +52,7 @@ ionViewDidLoad(){
          )
     
      }
-   goToDetail(movie: IMovie) {
+  goToDetail(movie: IMovie) {
     this.navCtrl.push(LoggedinPage, movie);
   }
 
@@ -79,6 +84,34 @@ getItems(ev) {
       })
     }
   }
+lista(){
+    this.proveedor.obtenerDatos()
+         
+         .subscribe(
+           (data)=> {this.usuarios = data['records'] ;
+           
+           console.log('Tigrezhito-traeDatos',data)
+           console.log('VIDEO_FILTRADOS_POR_CATEGORIA_ID',data)
+  
+           },
+           (error)=> {console.log(error);}
+  
+           )
+      
+       }
+
+
+setFilter() {
+    let keyword = this.keyword;
+
+    this.usuarios = this.lista;
+    
+    this.usuarios = this.usuarios.filter((usuarios) => {
+      return usuarios.title.indexOf(keyword) > -1;
+    })
+    
+  }
+
 
 
 
