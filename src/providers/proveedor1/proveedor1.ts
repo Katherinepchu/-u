@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs/Rx";
 import { IMovie } from "../../interface/IMovie";
 import { Storage } from '@ionic/storage';
+import { ListPage } from '../../Pages/list/list';
+
 
 
 /*
@@ -24,11 +26,13 @@ export class Proveedor1Provider {
    storage.get('usuario').then((val) => {
 
    this.user=val
+   console.log('q m  traes', this.user)
+
   
 
   });
 
-    console.log('Hello Proveedor1Provider Provider');
+
   
 
 

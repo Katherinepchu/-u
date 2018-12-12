@@ -19,11 +19,11 @@ import { ListPage } from '../list/list';
 })
 export class LoginPage {
   inputtext:string;
-  key:string='username';
+  // key:string='username';
  
-  @ViewChild('username') user;
+ // @ViewChild('username') user;
   @ViewChild('password') password;
-  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,
     private storage: Storage)
   
   {
@@ -34,19 +34,14 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  alert(message: string) {
-    this.alertCtrl.create({
-      title: 'Info!',
-      subTitle: message,
-      buttons: ['OK']
-    }).present();
-  }
+
 
 saveData(){  
 this.storage.set('usuario', this.inputtext);
+
 this.navCtrl.setRoot( ListPage );
+      // user is logged in
 
 
 }
 }
-  
