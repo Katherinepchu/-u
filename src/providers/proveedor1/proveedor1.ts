@@ -18,7 +18,7 @@ import { ListPage } from '../../Pages/list/list';
 export class Proveedor1Provider {
   private baseUrl: string = "http://videos.eventoz.tv/api/read.php?username=";
   movies: IMovie[];
-  usuario
+
   user:any;
   constructor(public storage:Storage,public http: HttpClient) {
 
@@ -31,9 +31,6 @@ export class Proveedor1Provider {
   
 
   });
-
-
-  
 
 
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild  } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
@@ -23,7 +23,7 @@ export class LoginPage {
  
  // @ViewChild('username') user;
   @ViewChild('password') password;
-  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,
+  constructor(public loadingCtrl: LoadingController, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,
     private storage: Storage)
   
   {
@@ -36,10 +36,19 @@ export class LoginPage {
 
 
 
-saveData(){  
+saveData(){ 
+  
+  
+let loader =this.loadingCtrl.create({
+  content: 'Cargando Peliculas',
+  duration :3000
+  
+})
+
+loader.present();
+this.navCtrl.setRoot( ListPage );
 this.storage.set('usuario', this.inputtext);
 
-this.navCtrl.setRoot( ListPage );
       // user is logged in
 
 
