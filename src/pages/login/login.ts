@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedinPage } from '../loggedin/loggedin';
 import { Storage } from '@ionic/storage';
 import { ListPage } from '../list/list';
+
 import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
 /**
  * Generated class for the LoginPage page.
@@ -53,6 +54,7 @@ if(this.proveedor.user != 'undefined'){
   this.navCtrl.setRoot( ListPage );
 }
 console.log('porque no entras????')
+this.navCtrl.setRoot( LoginPage );
 
 
       // user is logged in
