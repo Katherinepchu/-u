@@ -27,11 +27,11 @@
 <ion-content padding class="bg">
 
 
-
+  <!-- <ion-searchbar (ionInput)="getItems($event)" #usuario></ion-searchbar>
     <ion-row>
 
       <ion-searchbar [(ngModel)]="keyword" (ionInput)="setFilter()"></ion-searchbar>
-    
+     -->
 
       
       <ion-col col-6 *ngFor="let usuario of usuarios ">
@@ -42,6 +42,7 @@
         {{usuario.title}} -->
         <img style="width: 150px; height: 200px" src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}" (click)="goToDetail(usuario)">
         <!-- {{usuario.category_id}} -->
+        {{usuario.category_id}}
       </ion-col>
        
     </ion-row>
