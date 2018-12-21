@@ -4,9 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs/Rx";
 import { IMovie } from "../../interface/IMovie";
 import { Storage } from '@ionic/storage';
-import { ListPage } from '../../Pages/list/list';
-
-
+import { ListPage } from '../../pages/list/list';
 
 /*
   Generated class for the Proveedor1Provider provider.
