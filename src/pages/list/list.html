@@ -32,17 +32,21 @@
 
       <ion-searchbar [(ngModel)]="keyword" (ionInput)="setFilter()"></ion-searchbar>
      -->
+     
      <ion-row>
       
       <ion-col col-6 *ngFor="let usuario of usuarios ">
         
 
-        {{usuario.title}}
+       <!-- {{usuario.title}}-->
         <!-- 
         {{usuario.title}} -->
-        <img style="width: 150px; height: 200px" src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}" (click)="goToDetail(usuario)">
+        
+        <img  src="http://videos.eventoz.tv/cc-content/uploads/thumbs/{{usuario.filename}}" (click)="goToDetail(usuario)">
+       <p style="font-size: 15px; text-align:left; ">{{usuario.title}}</p> 
+       
         <!-- {{usuario.category_id}} -->
-        {{usuario.category_id}}
+        <!--{{usuario.category_id}}-->
       </ion-col>
        
     </ion-row>

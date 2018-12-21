@@ -20,6 +20,7 @@ import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  private baseUrl: string = "http://videos.eventoz.tv/api/read.php?username=";
   inputtext:string;
   // key:string='username';
  
@@ -50,15 +51,16 @@ let loader =this.loadingCtrl.create({
 loader.present();
 
 this.storage.set('usuario', this.inputtext);
-if(this.proveedor.user != 'undefined'){
+if( this.baseUrl+this.proveedor.user != this.proveedor.user){
   this.navCtrl.setRoot( ListPage );
+  console.log('5555556656655',this.proveedor.user)
 }
-console.log('porque no entras????')
-this.navCtrl.setRoot( LoginPage );
+//console.log('porque no entras????')
 
+//this.navCtrl.setRoot( LoginPage );
 
       // user is logged in
-
+     
 
 }
 }
