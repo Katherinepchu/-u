@@ -51,10 +51,14 @@ let loader =this.loadingCtrl.create({
 loader.present();
 
 this.storage.set('usuario', this.inputtext);
-if( this.baseUrl+this.proveedor.user != this.proveedor.user){
+if( this.storage.set('usuario', this.inputtext) == this.proveedor.user){
   this.navCtrl.setRoot( ListPage );
+} else {
+  
   console.log('5555556656655',this.proveedor.user)
 }
+
+
 //console.log('porque no entras????')
 
 //this.navCtrl.setRoot( LoginPage );
